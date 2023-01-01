@@ -97,44 +97,44 @@ if (isset($_POST["batal"])) {
     </nav>
     <!-- END NAVBAR -->
     <section class="update_card">
-    <div class="d-flex justify-content-center">
-        <div class="card bg_card w-50">
-            <div class="card-body">
-                <div class="d-flex justify-content-center">
-                    <div class="container my-5">
-                        <form method="POST" enctype="multipart/form-data">
-                            <div class="row mb-4">
-                                <h4 class="text-center ">Tambah Product</h4>
-                            </div>
-                            <div class="row g-3 justify-content-center">
-                                <div class="col-md-12">
-                                    <label style="font-weight : 600; color : black">Nama Product</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Nama Product" required>
+        <div class="d-flex justify-content-center">
+            <div class="card bg_card w-50">
+                <div class="card-body">
+                    <div class="d-flex justify-content-center">
+                        <div class="container my-5">
+                            <form method="POST" enctype="multipart/form-data">
+                                <div class="row mb-4">
+                                    <h4 class="text-center ">Tambah Product</h4>
                                 </div>
-                                <div class="col-md-12">
-                                    <label style="font-weight : 600; color : black">Harga</label>
-                                    <input type="text" name="price" class="form-control" placeholder="Harga" required>
+                                <div class="row g-3 justify-content-center">
+                                    <div class="col-md-12">
+                                        <label style="font-weight : 600; color : black">Nama Product</label>
+                                        <input type="text" name="name" class="form-control" placeholder="Nama Product" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label style="font-weight : 600; color : black">Harga</label>
+                                        <input type="text" name="price" class="form-control" placeholder="Harga" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label style="font-weight : 600; color : black">Deskripsi</label>
+                                        <input type="text" name="desc" class="form-control" placeholder="Deskripsi" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label style="font-weight : 600; color : black">Gambar Product</label>
+                                        <br>
+                                        <input type="file" name="fileToUpload" id="fileToUpload">
+                                    </div>
+                                    <div class="col-md-12 d-flex justify-content-end gap-2">
+                                        <a class="btn btn-danger" value="Batal" href="bengkel_page.php"> Batal </a>
+                                        <input class="btn btn-primary" href="admin_page.php" type="submit" name="create" value="Create"></input>
+                                    </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <label style="font-weight : 600; color : black">Deskripsi</label>
-                                    <input type="text" name="desc" class="form-control" placeholder="Deskripsi" required>
-                                </div>
-                                <div class="col-md-12">
-                                    <label style="font-weight : 600; color : black">Gambar Product</label>
-                                    <br>
-                                    <input type="file" name="fileToUpload" id="fileToUpload">
-                                </div>
-                                <div class="col-md-12 d-flex justify-content-end gap-2">
-                                    <input class="btn btn-danger" value="Batal" name="batal" type="submit"></input>
-                                    <input class="btn btn-primary" href="admin_page.php" type="submit" name="create" value="Create"></input>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </section>
 
     <!-- FOOTER -->
