@@ -10,7 +10,7 @@
         <form action="">
             <div class="row g-3 justify-content-center">
                 <div class="col-md-10">
-                    <label for="email">Name</label>
+                    <label for="name">Name</label>
                     <input type="text" class="form-control">
                 </div>
                 <div class="col-md-10">
@@ -18,11 +18,11 @@
                     <input type="text" class="form-control">
                 </div>
                 <div class="col-md-10">
-                    <label for="email">Subject</label>
+                    <label for="subject">Subject</label>
                     <input type="text" class="form-control">
                 </div>
                 <div class="col-md-10">
-                    <label for="email">Message</label>
+                    <label for="message">Message</label>
                     <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
                 </div>
                 <div class="col-md-10">

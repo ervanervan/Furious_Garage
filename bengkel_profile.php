@@ -15,76 +15,118 @@ if (!isset($_SESSION['pemilikbengkel_name'])) {
 
 <head>
     <?php include "css/css.php"; ?>
-    <title>Profil pemilikkos | Kosan TPI</title>
-
+    <title>Pemilikbengkel profiles - Furious Garage</title>
 </head>
 
 <body>
 
-    <section id="contact" class="">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
         <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-8 mx-auto text-center">
-                    <h1>Edit Profil</h1>
+            <a class="navbar-brand logo-fg" href="#">
+                <img src="img/FuriousGarageSolid.png" alt="FuriousGarageSolid.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <span class="nav-link">Hi,
+                            <?php echo $_SESSION['pemilikbengkel_name'] ?>
+                        </span>
+                    </li>
+                </ul>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary ms-lg-3 dropdown-toggle d-flex align-items-center gap-1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bx bxs-cog"></i>settings
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item d-flex align-items-center gap-2" href="bengkel_profile.php"><i class="bx bxs-user"></i> Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item d-flex align-items-center gap-2" href="logout.php"><i class='bx bxs-log-out'></i> Logout</a></li>
+                    </ul>
                 </div>
             </div>
-            <?php
-            if (isset($_POST["update"])) {
-                $userNewName  =    $_POST['updateUserName'];
-                $userNewEmail =    $_POST['userEmail'];
-                $loggedInUser = $_SESSION['pemilikbengkel_name'];
+        </div>
+    </nav>
+    <!-- END NAVBAR -->
 
-                $sql = "UPDATE user SET name = '$userNewName', email ='$userNewEmail' WHERE name = '$loggedInUser'";
-
-                $results = mysqli_query($conn, $sql);
-                // print_r($results);
-                $_SESSION['pemilikbengkel_name'] = $userNewName;
-                header('location:bengkel_page.php');
-            }
-            ?>
-            <?php
-            if (isset($_POST["batal"])) {
-                header("location:bengkel_page.php");
-            }
-            ?>
-            <form method="post">
-                <?php
-                $currentUser = $_SESSION['pemilikbengkel_name'];
-                $sql = "SELECT * FROM user WHERE name ='$currentUser'";
-
-                $gotResuslts = mysqli_query($conn, $sql);
-
-                if ($gotResuslts) {
-                    if (mysqli_num_rows($gotResuslts) > 0) {
-                        while ($row = mysqli_fetch_array($gotResuslts)) {
-                            // print_r($row['name']);
-                ?>
-                            <div class="row g-3 justify-content-center">
-                                <div class="col-md-7">
-                                    <input type="text" name="updateUserName" class="form-control" placeholder="Username" required value="<?php echo $row['name']; ?>">
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="text" name="userEmail" class="form-control" placeholder="Email Address" required value="<?php echo $row['email']; ?>">
-                                </div>
-                                <div class="col-md-7">
-                                    <input class="btn btn-primary" href="bengkel_page.php" type="submit" name="update" class="btn btn-info" value="Update"></input>
-                                    <input class="btn btn-danger" href="bengkel_page.php" value="Batal" name="batal" type="submit"></input>
-                                </div>
+    <section class="update_card">
+        <div class="d-flex justify-content-center">
+            <div class="card bg_card w-50">
+                <div class="card-body py-5">
+                    <div class="container">
+                        <div class="row mb-4">
+                            <div class="col-md-8 mx-auto text-center">
+                                <h4>Edit Profil</h4>
                             </div>
+                        </div>
+                        <?php
+                        if (isset($_POST["update"])) {
+                            $userNewName  =    $_POST['updateUserName'];
+                            $userNewEmail =    $_POST['userEmail'];
+                            $loggedInUser = $_SESSION['pemilikbengkel_name'];
 
-                <?php
+                            $sql = "UPDATE user SET name = '$userNewName', email ='$userNewEmail' WHERE name = '$loggedInUser'";
+
+                            $results = mysqli_query($conn, $sql);
+                            $_SESSION['pemilikbengkel_name'] = $userNewName;
+                            header('location:bengkel_page.php');
                         }
-                    }
-                }
+                        ?>
+                        <?php
+                        if (isset($_POST["batal"])) {
+                            header("location:bengkel_page.php");
+                        }
+                        ?>
+                        <form method="post">
+                            <?php
+                            $currentUser = $_SESSION['pemilikbengkel_name'];
+                            $sql = "SELECT * FROM user WHERE name ='$currentUser'";
+
+                            $gotResuslts = mysqli_query($conn, $sql);
+
+                            if ($gotResuslts) {
+                                if (mysqli_num_rows($gotResuslts) > 0) {
+                                    while ($row = mysqli_fetch_array($gotResuslts)) {
+                            ?>
+                                        <div class="row g-3 justify-content-center">
+                                            <div class="col-md-12">
+                                                <label for="username">Username</label>
+                                                <input type="text" name="updateUserName" class="form-control" required value="<?php echo $row['name']; ?>">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label for="username">Email Address</label>
+                                                <input type="text" name="userEmail" class="form-control" required value="<?php echo $row['email']; ?>">
+                                            </div>
+                                            <div class="col-md-12 d-flex justify-content-end gap-2">
+                                                <input class="btn btn-danger" href="bengkel_page.php" value="Batal" name="batal" type="submit"></input>
+                                                <input class="btn btn-primary" href="bengkel_page.php" type="submit" name="update" class="btn btn-info" value="Update"></input>
+                                            </div>
+                                        </div>
+
+                            <?php
+                                    }
+                                }
+                            }
 
 
-                ?>
+                            ?>
 
-            </form>
+                        </form>
 
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
+    <?php include "views/footer.php"; ?>
+    <!-- END FOOTER -->
 
 </body>
 

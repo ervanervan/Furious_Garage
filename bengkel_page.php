@@ -15,22 +15,15 @@ if (!isset($_SESSION['pemilikbengkel_name'])) {
 
 <head>
     <?php include "css/css.php"; ?>
-    <title>Halaman Pemilik Bengkel - Furious Garage</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        .dropdown-toggle::after {
-            content: none;
-        }
-    </style>
+    <title>Pemilikbengkel page - Furious Garage</title>
 </head>
 
 <body>
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <h1 class="fs-4 mb-0">Furious Garage</h1>
+            <a class="navbar-brand logo-fg" href="#">
+                <img src="img/FuriousGarageSolid.png" alt="FuriousGarageSolid.png">
             </a>
 
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -59,7 +52,7 @@ if (!isset($_SESSION['pemilikbengkel_name'])) {
     <!-- END NAVBAR -->
 
     <!-- PRODUCT -->
-    <section id="product" class="bg-light">
+    <section class="bg-light">
         <div class="container">
             <div class="btn-group">
                 <a class="btn btn-primary mb-3 d-flex align-items-center gap-2" href="product.php"><i class="bx bxs-plus-circle"></i> Add Product</a>

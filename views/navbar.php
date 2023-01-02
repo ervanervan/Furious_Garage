@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <h1 class="fs-4 mb-0">Furious Garage</h1>
+            <a class="navbar-brand logo-fg" href="#">
+                <img src="img/FuriousGarageSolid.png" alt="FuriousGarageSolid.png">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

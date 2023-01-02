@@ -33,14 +33,13 @@ if (isset($_POST['submit'])) {
 <html lang="en">
 
 <head>
-   <?php include "css/csslogin.php"; ?>
+   <?php include "css/css.php"; ?>
    <title>Login - Furious Garage</title>
-
 </head>
 
 <body>
    <div class="container_log">
-      <form method="post" class="form-log">
+      <form method="post">
          <div class="text-center my-4">
             <h1 class="fs-4 mb-0"><strong>Furious Garage</strong></h1>
          </div>
@@ -55,7 +54,7 @@ if (isset($_POST['submit'])) {
          <input type="email" name="email" required>
          <label for="password">Password</label>
          <input type="password" name="password" required>
-         <input type="submit" name="submit" value="Login" class="form-btn">
+         <input type="submit" name="submit" value="Login" class="btn btn-primary">
          <p>Belum memiliki Akun? <a href="register.php">Register!</a></p>
       </form>
    </div>

@@ -15,21 +15,15 @@ if (!isset($_SESSION['user_name'])) {
 
 <head>
    <?php include "css/css.php"; ?>
-   <title>Halaman Pengguna - Furious Garage</title>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-   <style>
-      .dropdown-toggle::after {
-         content: none;
-      }
-   </style>
+   <title>User page - Furious Garage</title>
 </head>
 
 <body>
    <!-- NAVBAR -->
    <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white d-flex justify-content-around">
       <div class="container">
-         <a class="navbar-brand" href="#">
-            <h1 class="fs-4 mb-0">Furious Garage</h1>
+         <a class="navbar-brand logo-fg" href="#">
+            <img src="img/FuriousGarageSolid.png" alt="FuriousGarageSolid.png">
          </a>
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -60,11 +54,11 @@ if (!isset($_SESSION['user_name'])) {
    <!-- END NAVBAR -->
 
    <!-- PRODUCT -->
-   <section id="product" class="bg-light">
+   <section class="bg-light">
       <div class="container">
          <div class="row mb-4">
-            <a class="nav-link" href="#product">
-               <h4>Product</h4>
+            <a class="nav-link" href="#">
+               <h4>Products</h4>
             </a>
          </div>
          <div class="row g-4">

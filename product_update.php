@@ -15,22 +15,15 @@ if (!isset($_SESSION['pemilikbengkel_name'])) {
 
 <head>
     <?php include "css/css.php"; ?>
-    <title>Update Product - Furious Garage</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        .dropdown-toggle::after {
-            content: none;
-        }
-    </style>
+    <title>Update product - Furious Garage</title>
 </head>
 
 <body>
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <h1 class="fs-4 mb-0">Furious Garage</h1>
+            <a class="navbar-brand logo-fg" href="#">
+                <img src="img/FuriousGarageSolid.png" alt="FuriousGarageSolid.png">
             </a>
 
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -57,13 +50,13 @@ if (!isset($_SESSION['pemilikbengkel_name'])) {
         </div>
     </nav>
     <!-- END NAVBAR -->
-    <section class="update_card">
 
+    <section class="update_card">
         <div class="d-flex justify-content-center">
             <div class="card bg_card w-50">
                 <div class="card-body py-5">
                     <div class="col-md-8 mx-auto text-center">
-                        <h1 class="fs-2">Edit Product</h1>
+                        <h4 class="fs-4">Edit Product</h4>
                     </div>
                     <?php
                     if (isset($_POST["update"])) {
@@ -102,7 +95,6 @@ if (!isset($_SESSION['pemilikbengkel_name'])) {
                             }
                         }
                         $results = mysqli_query($conn, $updte);
-                        // print_r($results);
 
                         header('location:bengkel_page.php');
                     }
@@ -123,32 +115,31 @@ if (!isset($_SESSION['pemilikbengkel_name'])) {
                             if ($gotResuslts) {
                                 if (mysqli_num_rows($gotResuslts) > 0) {
                                     while ($row = mysqli_fetch_array($gotResuslts)) {
-                                        // print_r($row['name']);
                             ?>
                                         <div class="row g-3">
                                             <div class="col-md-12">
-                                                <label style="font-weight : 600; color : black">Nama Product</label>
-                                                <input type="text" name="name" class="form-control" placeholder="Nama Product" required value="<?php echo $row['name']; ?>">
+                                                <label>Nama Product</label>
+                                                <input type="text" name="name" class="form-control" required value="<?php echo $row['name']; ?>">
                                             </div>
                                             <div class="col-md-12">
-                                                <label style="font-weight : 600; color : black">Harga</label>
-                                                <input type="text" name="price" class="form-control" placeholder="Harga" required value="<?php echo $row['price']; ?>">
+                                                <label>Harga</label>
+                                                <input type="text" name="price" class="form-control" required value="<?php echo $row['price']; ?>">
                                             </div>
                                             <div class="col-md-12">
-                                                <label style="font-weight : 600; color : black">Deskripsi</label>
-                                                <input type="text" name="desc" class="form-control" placeholder="Deskripsi" required value="<?php echo $row['desc']; ?>">
+                                                <label>Deskripsi</label>
+                                                <input type="text" name="desc" class="form-control" required value="<?php echo $row['desc']; ?>">
                                             </div>
                                             <div class="col-md-12">
-                                                <label style="font-weight : 600; color : black">Gambar Product</label>
+                                                <label>Gambar Product</label>
                                                 <br>
                                                 <img src="uploads/<?php echo $row['img'] ?>" alt="" name="old-img" style="width: 300px">
                                             </div>
                                             <div class="col-md-12">
-                                                <label style="font-weight : 600; color : black">Update Gambar Product</label>
+                                                <label>Update Gambar Product</label>
                                                 <br>
                                                 <input type="file" name="fileToUpload" id="fileToUpload" value="<?php echo $row['img']; ?>">
                                             </div>
-                                            <div class="col-md-12 d-flex justify-content-end gap-2 mt-3">
+                                            <div class="col-md-12 d-flex justify-content-end gap-2">
                                                 <input class="btn btn-danger" value="Batal" name="batal" type="submit"></input>
                                                 <input class="btn btn-primary" type="submit" name="update" value="Update"></input>
                                             </div>
@@ -173,7 +164,7 @@ if (!isset($_SESSION['pemilikbengkel_name'])) {
     <!-- FOOTER -->
     <?php include "views/footer.php"; ?>
     <!-- END FOOTER -->
-    
+
 </body>
 
 </html>

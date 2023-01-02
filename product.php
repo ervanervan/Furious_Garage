@@ -38,7 +38,6 @@ if (isset($_POST['create'])) {
     $insert = "INSERT INTO `products`( `name`, `price`, `desc`, `img`) VALUES ( '$name', '$price', '$desc', '$img')";
     $result = mysqli_query($conn, $insert);
     if ($result) {
-        // echo "Data inserted succesfull";
         header('location:bengkel_page.php');
     } else {
         die(mysqli_error($conn));
@@ -50,26 +49,20 @@ if (isset($_POST["batal"])) {
 ?>
 
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <?php include "css/css.php"; ?>
-    <title>Tambah Product - Furious Garage</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        .dropdown-toggle::after {
-            content: none;
-        }
-    </style>
+    <title>Add product - Furious Garage</title>
 </head>
 
 <body>
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <h1 class="fs-4 mb-0">Furious Garage</h1>
+            <a class="navbar-brand logo-fg" href="#">
+                <img src="img/FuriousGarageSolid.png" alt="FuriousGarageSolid.png">
             </a>
 
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -96,6 +89,7 @@ if (isset($_POST["batal"])) {
         </div>
     </nav>
     <!-- END NAVBAR -->
+
     <section class="update_card">
         <div class="d-flex justify-content-center">
             <div class="card bg_card w-50">
@@ -108,19 +102,19 @@ if (isset($_POST["batal"])) {
                                 </div>
                                 <div class="row g-3 justify-content-center">
                                     <div class="col-md-12">
-                                        <label style="font-weight : 600; color : black">Nama Product</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Nama Product" required>
+                                        <label>Nama Product</label>
+                                        <input type="text" name="name" class="form-control" required>
                                     </div>
                                     <div class="col-md-12">
-                                        <label style="font-weight : 600; color : black">Harga</label>
-                                        <input type="text" name="price" class="form-control" placeholder="Harga" required>
+                                        <label>Harga</label>
+                                        <input type="text" name="price" class="form-control" required>
                                     </div>
                                     <div class="col-md-12">
-                                        <label style="font-weight : 600; color : black">Deskripsi</label>
-                                        <input type="text" name="desc" class="form-control" placeholder="Deskripsi" required>
+                                        <label>Deskripsi</label>
+                                        <input type="text" name="desc" class="form-control" required>
                                     </div>
                                     <div class="col-md-12">
-                                        <label style="font-weight : 600; color : black">Gambar Product</label>
+                                        <label>Gambar Product</label>
                                         <br>
                                         <input type="file" name="fileToUpload" id="fileToUpload">
                                     </div>
